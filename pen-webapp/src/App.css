@@ -1,0 +1,73 @@
+body {
+  color: white;
+}
+.logoName {
+  font-size: 30px;
+  color: #6797ff;
+
+  font-family: cursive;
+  margin-right: 100px;
+  margin-left: 35px;
+  text-decoration: none;
+}
+.logoName:hover {
+  color: #ffffff;
+
+  text-decoration: none;
+}
+
+.homeSec {
+  background-color: black;
+  padding: 50px;
+}
+#line1 {
+  font-size: 80px;
+}
+#line2 {
+  font-size: 70px;
+  margin-top: -15px;
+}
+#line3 {
+  margin-left: 10px;
+}
+#line4 {
+  font-size: 20px;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+.btn {
+  margin-left: 10px;
+}
+#svg-container {
+  margin-top: -220px;
+  width: 40%;
+  height: 350px;
+  float: right;
+  display: flex;
+}
+@media screen and (max-width: 600px) {
+  #svg-container {
+    visibility: hidden;
+  }
+}
+#beautiful {
+  color: #6797ff;
+}
+
+.footer {
+  background-color: #343a40;
+  padding: 25px;
+}
+/*  */
+#aboutInfoF {
+  margin-left: 35px;
+}
+
+.container-main {
+  background-color: #292929;
+  color: black;
+}
+.wrapper {
+  color: black;
+  -webkit-flex-wrap: wrap;
+}
