@@ -1,11 +1,8 @@
 import axios from "axios";
-import ReactDOMServer from "react-dom/server";
 import React from "react";
 import { useState } from "react";
-var ReactDOM = require("react-dom");
 
 const CreatePen = () => {
-  
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -41,9 +38,14 @@ const CreatePen = () => {
   };
 
   return (
-    <div>
+    <div className="createcontainer">
       <div className="cerd createpen">
-        <h1 id="createpenh1"> Create New Pen</h1>
+        <div className="createpenh1">
+          <h1>
+            Create <br /> New
+            <br /> Pen
+          </h1>
+        </div>
         <form id="create-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <input
