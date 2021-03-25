@@ -12,14 +12,14 @@ const OnePen = (props) => {
     e.preventDefault();
     setDisplay("notdisplayed");
   };
-  
+
   return (
     <div
       onMouseEnter={(e) => showButton(e)}
       onMouseLeave={(e) => hideButton(e)}
       className="cerd"
-      key={props._ID}
     >
+  
       <div className=" cardBody">
         <h2 className="cardTitle">{props.title}</h2>
         <p className="cardText">{props.desc}</p>
@@ -32,9 +32,3 @@ const OnePen = (props) => {
 };
 
 export default OnePen;
-
-// const ToggleHandler = () => {
-//   console.log("mouse enrer");
-//   setVisibility = "visible";
-//   document.getElementById("toolbar").style.visibility = { visibility };
-// };

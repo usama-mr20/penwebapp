@@ -4,13 +4,12 @@ const PensList = ({ pens }) => {
     <>
       <div id="mainPen" className="wrapper">
         {pens.map((pen) => (
-          <>
+          <div key={pen._id}>
             <OnePen
-              _ID={pen._id}
               title={pen.title}
               desc={pen.description}
             ></OnePen>
-          </>
+          </div>
         ))}
       </div>
     </>
