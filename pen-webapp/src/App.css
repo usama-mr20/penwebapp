@@ -68,7 +68,7 @@ body {
   color: black;
 }
 .wrapper {
-  color: black;
+  color: rgb(238, 238, 238);
   display: flex;
   flex-direction: row;
   -webkit-flex-wrap: wrap;
@@ -76,18 +76,24 @@ body {
   justify-content: center;
 }
 .cerd {
-  background-color: white;
-  padding: 10px;
-  margin: 10px;
+
+  margin: 0px 10px 15px 0px;
   width: fit-content;
+  height: fit-content;
+  border: 1px solid #4981fa;
   border-radius: 5px;
   justify-content: center;
- 
+  transition: transform 0.5s;
 }
+.cerd:hover {
+  transform: translateY(-8px);
+}
+
 .createpen {
   display: flex;
   flex-wrap: wrap;
   min-width: auto;
+  padding: 10px;
 }
 .createpenh1 {
   padding: 0px;
@@ -95,6 +101,43 @@ body {
   margin: 0px 30px 0px 10px;
 }
 .createcontainer {
+  color: rgb(238, 238, 238);
+
   display: flex;
   justify-content: center;
+}
+.cardBody {
+  padding: 10px;
+  min-width: 70px;
+  max-width: 150px;
+
+  min-height: 80px;
+  max-height: 150px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: transparent;
+}
+.cardTitle {
+  font-size: 20px;
+}
+p.cardText {
+  margin: 0px 10px 0px 0px;
+}
+.bottom-toolbar {
+  min-width: 70px;
+  max-width: 150px;
+
+  min-height: 25px;
+  max-height: 25px;
+
+  border-top: 1px solid #ffffff;
+  text-align: center;
+}
+.notdisplayed {
+  display: none;
+}
+
+.displayed {
+  display: block;
 }

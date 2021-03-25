@@ -1,6 +1,8 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
+import OnePen from "./OnePen";
+import PensList from "./PensList"
 
 const CreatePen = () => {
   const [title, setTitle] = useState("");
@@ -32,7 +34,10 @@ const CreatePen = () => {
         div2.appendChild(p);
         div1.appendChild(div2);
 
-        document.getElementById("mainPen").appendChild(div1);
+        document
+          .getElementById("mainPen")
+          .appendChild(div1);
+
       }
     });
   };
@@ -49,6 +54,7 @@ const CreatePen = () => {
         <form id="create-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <input
+              id="titleinputbox"
               className="form-control"
               type="text"
               placeholder="Pen title"
@@ -60,6 +66,7 @@ const CreatePen = () => {
 
           <div className="form-group">
             <textarea
+              id="txtareabox"
               className="form-control"
               placeholder="Pen description"
               required
