@@ -76,7 +76,6 @@ body {
   justify-content: center;
 }
 .cerd {
-
   margin: 0px 10px 15px 0px;
   width: fit-content;
   height: fit-content;
@@ -130,10 +129,16 @@ p.cardText {
 
   min-height: 25px;
   max-height: 25px;
-
-  border-top: 1px solid #ffffff;
+  border-top: 1px solid #4981fa;
+  border-radius: 5px;
   text-align: center;
 }
+
+.bottom-toolbar:hover {
+  background-color: rgb(255, 0, 51);
+  cursor: pointer;
+}
+
 .notdisplayed {
   display: none;
 }
