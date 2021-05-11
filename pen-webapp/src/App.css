@@ -19,6 +19,7 @@ body {
 .homeSec {
   background-color: black;
   padding: 50px;
+  height: 650px;
 }
 #line1 {
   font-size: 80px;
@@ -66,6 +67,7 @@ body {
 .container-main {
   background-color: #292929;
   color: black;
+  height: 650px;
 }
 .wrapper {
   color: rgb(238, 238, 238);
@@ -92,7 +94,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   min-width: auto;
-  padding: 10px;
+  padding: 25px;
 }
 .createpenh1 {
   padding: 0px;
@@ -101,7 +103,6 @@ body {
 }
 .createcontainer {
   color: rgb(238, 238, 238);
-
   display: flex;
   justify-content: center;
 }

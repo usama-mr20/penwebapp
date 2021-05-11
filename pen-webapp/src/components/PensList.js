@@ -1,17 +1,48 @@
 import OnePen from "./OnePen";
-const PensList = ({ pens }) => {
+
+const PensList = ({ list }) => {
+
+  // const returnList = (list) => {
+  //   if (list !== null) {
+  //     return(
+        
+  //     list.map((pen) => (
+  //       <div id={pen._id} key={pen._id}>
+  //         <div>
+  //           <OnePen
+  //             id={pen._id}
+  //             title={pen.title}
+  //             desc={pen.description}
+  //           ></OnePen>
+  //         </div>
+  //       </div>
+  //     ))
+  //     )
+  //   }else{
+  //     return (<h2> List is Null </h2>)
+  //   }
+
+
+  // };
+
   return (
     <>
       <div id="mainPen" className="wrapper">
-        {pens.map((pen) => (
-          <div id={pen._id} key={pen._id}>
-            <OnePen
-              id={pen._id}
-              title={pen.title}
-              desc={pen.description}
-            ></OnePen>
-          </div>
-        ))}
+        {
+          /* {returnList()} */
+
+          list.map((pen) => (
+            <div id={pen._id} key={pen._id}>
+              <div>
+                <OnePen
+                  id={pen._id}
+                  title={pen.title}
+                  desc={pen.description}
+                ></OnePen>
+              </div>
+            </div>
+          ))
+        }
       </div>
     </>
   );

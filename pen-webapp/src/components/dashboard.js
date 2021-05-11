@@ -1,5 +1,4 @@
 import React from "react";
-import PensList from "./PensList";
 import FetchData from "./FetchData";
 import CreatePen from "./CreatePen";
 
@@ -9,11 +8,10 @@ const Dashboard = () => {
   return (
     <div className="container-main">
       {error && <div>{error}</div>}
-      {isLoading && <div style={{ color: "white" }}>Loading...</div>}
+      {/* {isLoading && <div style={{ color: "white" }}>Loading...</div>} */}
       <br />
-      <CreatePen />
+      {pens && <CreatePen pens={pens} isLoading={isLoading} />}
       <br />
-      {pens && <PensList pens={pens} />}
     </div>
   );
 };

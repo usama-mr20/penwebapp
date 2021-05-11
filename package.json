@@ -1,6 +1,6 @@
 {
-  "name": "first-app",
-  "version": "0.0.0",
+  "name": "pen-app",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -17,6 +17,7 @@
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.14",
     "morgan": "~1.9.1",
+    "nodemon": "^2.0.7",
     "pen-app": "0.0.0"
   }
 }

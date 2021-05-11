@@ -1,83 +1,90 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import OnePen from "./OnePen";
 import PensList from "./PensList"
+import { BarLoader } from "react-spinners";
 
-const CreatePen = () => {
+
+const CreatePen = ({ pens, isLoading }) => {
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [loading, setLoading] = useState(isLoading);
+  const [list, setList] = useState(pens);
+  const pen = { title, description };
+
+  //
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const pen = { title, description };
 
     axios.post("http://localhost:5000/addPen", pen).then((res) => {
       if (res.status === 200) {
-        const div1 = document.createElement("div");
-        div1.className = "cerd";
-        const key = document.createAttribute("key");
-        key.value = res.data._id;
-
-        const div2 = document.createElement("div");
-        div2.className = "card-body";
-
-        const h2 = document.createElement("h2");
-        h2.className = "card-title";
-        h2.innerHTML = res.data.title;
-
-        const p = document.createElement("p");
-        p.className = "card-text";
-        p.innerHTML = res.data.description;
-
-        div2.appendChild(h2);
-        div2.appendChild(p);
-        div1.appendChild(div2);
-
-        document
-          .getElementById("mainPen")
-          .appendChild(div1);
-
+        pen._id = res.data._id;
+        setList([...list, pen]);
       }
     });
   };
 
-  return (
-    <div className="createcontainer">
-      <div className="cerd createpen">
-        <div className="createpenh1">
-          <h1>
-            Create <br /> New
-            <br /> Pen
-          </h1>
+  const returnLists = (loadingVar) => {
+   
+
+    if (loadingVar) {
+      return (
+        <div className="createcontainer">
+          <BarLoader color="blue" />
         </div>
-        <form id="create-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <input
-              id="titleinputbox"
-              className="form-control"
-              type="text"
-              placeholder="Pen title"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              required
-            />
-          </div>
+      );
+    } else {
+      return (
+        <PensList list={list}/>
+      );
+    }
+  };
 
-          <div className="form-group">
-            <textarea
-              id="txtareabox"
-              className="form-control"
-              placeholder="Pen description"
-              required
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            ></textarea>
+  return (
+    <div>
+      <div className="createcontainer">
+        <div className="cerd createpen">
+          <div className="createpenh1">
+            <h1>
+              Create <br /> New
+              <br /> Pen
+            </h1>
           </div>
+          <form id="create-form">
+            
+            <div className="form-group">
+              <input
+                id="titleinputbox"
+                className="form-control"
+                type="text"
+                placeholder="Pen title"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                required
+              />
+            </div>
 
-          <button className="btn btn-primary">Add Pen</button>
-        </form>
+            <div className="form-group">
+              <textarea
+                id="txtareabox"
+                className="form-control"
+                placeholder="Pen description"
+                required
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              ></textarea>
+            </div>
+
+            <button className="btn btn-primary" onClick={handleSubmit}>
+              Add Pen
+            </button>
+          </form>
+        </div>
       </div>
+      <br />
+      {returnLists(loading)}
     </div>
   );
 };

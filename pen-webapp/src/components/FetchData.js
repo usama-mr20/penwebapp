@@ -7,24 +7,26 @@ const FetchData = (url) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const source = axios.CancelToken.source();
+    setTimeout(() => {
+      const source = axios.CancelToken.source();
 
-    axios
-      .get(url, { cancelToken: source.token })
-      .then((response) => {
-        setIsLoading(false);
-        setData(response.data);
-      })
-      .catch((err) => {
-        if (!axios.isCancel(err)) {
+      axios
+        .get(url, { cancelToken: source.token })
+        .then((response) => {
           setIsLoading(false);
-          setError(err.message);
-        }
-      });
+          setData(response.data);
+        })
+        .catch((err) => {
+          if (!axios.isCancel(err)) {
+            setIsLoading(false);
+            setError(err.message);
+          }
+        });
 
-    return () => {
-      source.cancel();
-    };
+      return () => {
+        source.cancel();
+      };
+    }, 1000);
   }, [url]);
 
   return { data, isLoading, error };
